@@ -43,6 +43,11 @@ mm-filter \
   -o "${NAME}_cropped.mm"
 
 echo ""
+echo "=== Inspecting cropped map — close the viewer window to continue ==="
+mm-info "${NAME}_cropped.mm"
+mm-viewer -l libmola_metric_maps.so "${NAME}_cropped.mm"
+
+echo ""
 echo "=== Step 2b: Export cropped map to PLY ==="
 # Note: mm2ply may print a warning/error about the empty 'raw' layer — this is normal.
 # The map_cropped layer is written before that error occurs.
