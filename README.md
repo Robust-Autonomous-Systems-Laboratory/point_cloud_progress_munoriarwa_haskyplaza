@@ -265,11 +265,17 @@ standard LAS LiDAR format. Compression typically achieves 3–4× size reduction
 
 **4. `PotreeConverter` — build a spatial index for web streaming**
 
-A raw LAZ file can't be streamed efficiently in a browser — loading 10 million points at
+A raw LAZ file can't be streamed efficiently in a browser — loading millions of points at
 once would be too slow. PotreeConverter organizes the points into an **octree**: a 3D tree
 structure that lets the browser load coarse detail first and add fine detail as you zoom in.
 It produces a folder of small tile files (`cloud.js` + numbered bin files) that Potree
 streams on demand.
+
+The script runs this command automatically:
+```bash
+LD_LIBRARY_PATH=. ./PotreeConverter <your-map>.laz -o pointclouds/<your-map-name>
+```
+(`LD_LIBRARY_PATH=.` is needed so PotreeConverter can find `liblaszip.so` in the repo root.)
 
 ---
 
