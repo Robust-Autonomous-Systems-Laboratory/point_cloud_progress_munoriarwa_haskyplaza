@@ -89,18 +89,25 @@ mm-info --help
 
 ### Create your GitHub repository
 
-1. On GitHub, click **+** (top-right) → **New repository**.
-2. Set the owner to **Robust-Autonomous-Systems-Laboratory** and give your repo a descriptive name
-   (e.g. `point-cloud-husky-plaza`).
-3. Under **Configuration**, select **ee5531_proj10** as the repository template.
-4. **Important:** Set visibility to **Public** — GitHub Pages requires a public repository.
-5. Click **Create repository**.
-6. Clone it to the lab machine:
+1. Clone the template repo to the lab machine:
    ```bash
-   git clone https://github.com/Robust-Autonomous-Systems-Laboratory/<your-repo>.git
+   git clone https://github.com/Robust-Autonomous-Systems-Laboratory/ee5531_proj10.git <your-repo>
    cd <your-repo>
    ```
-7. Enable GitHub Pages: **Settings → Pages → Deploy from branch → `main`, root `/`**.
+
+2. On GitHub, create a new empty repository:
+   - Owner: **Robust-Autonomous-Systems-Laboratory**
+   - Name: something descriptive (e.g. `point-cloud-husky-plaza`)
+   - Visibility: **Public** (required for GitHub Pages)
+   - **Do not** initialize with a README or .gitignore
+
+3. Point your local clone at the new repo and push:
+   ```bash
+   git remote set-url origin https://github.com/Robust-Autonomous-Systems-Laboratory/<your-repo>.git
+   git push -u origin main
+   ```
+
+4. Enable GitHub Pages: **Settings → Pages → Deploy from branch → `main`, root `/`**.
    Your viewer will be at `https://robust-autonomous-systems-laboratory.github.io/<your-repo>/`.
 
 ---
