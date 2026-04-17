@@ -68,7 +68,7 @@ echo ""
 echo "=== Step 2c: Decimate and convert to LAZ (voxel size: ${VOXEL} m) ==="
 python3 "${SCRIPT_DIR}/ply_to_laz.py" \
   "$PLY" \
-  "${NAME}.laz" \
+  "${NAME}_static_map_cropped.ply" \
   --voxel-size "$VOXEL"
 
 echo ""
